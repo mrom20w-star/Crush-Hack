@@ -18,24 +18,24 @@ export function Header({
 
   return (
     <div
-      className="sticky top-0 z-40 w-full bg-[#0f2447] border-b border-[#0a1933]"
+      className="sticky top-0 z-40 w-full bg-white border-b border-[#e5e8ef]"
       dir="rtl"
     >
-      <header className="flex h-[46px] w-full items-center justify-between px-3 md:h-[52px] md:px-6">
-        {/* Right side (RTL start): back arrow */}
+      <header className="flex h-[48px] w-full items-center justify-between px-3 md:h-[54px] md:px-6">
+        {/* Right side (RTL start): slate-gray back arrow */}
         <button
           type="button"
           aria-label="رجوع"
           onClick={onBack}
-          className="flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center rounded-full text-white/95 transition-colors hover:bg-white/10 active:opacity-60"
+          className="flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center rounded-full text-[#6f7b8e] transition-colors hover:bg-black/5 hover:text-[#4b5563] active:opacity-60"
         >
           <svg
-            width="20"
-            height="20"
+            width="21"
+            height="21"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            strokeWidth="1.9"
+            strokeWidth="2.1"
             strokeLinecap="round"
             strokeLinejoin="round"
             aria-hidden="true"
@@ -45,30 +45,36 @@ export function Header({
           </svg>
         </button>
 
-        {/* Center: harmonized deep-blue wallet capsule (#1c3766 outer + #12274b inner) + blue + image */}
+        {/* Center: exact #979797 outer capsule with generous padding & wide gap, #5c5c5c balance pill, and #39e981 green + button */}
         <button
           type="button"
           aria-label="إيداع"
           onClick={onOpenDeposit}
-          className="inline-flex max-w-[74vw] cursor-pointer items-center gap-[5px] rounded-full border border-[#2b4d85] bg-[#1c3766] px-[4.5px] py-[3.5px] shadow-sm transition-transform active:scale-[0.98]"
+          className="inline-flex max-w-[78vw] cursor-pointer items-center gap-[11px] rounded-full border border-[#888888] bg-[#979797] px-[6.5px] py-[5.5px] transition-transform active:scale-[0.98]"
         >
           <span
             dir="ltr"
-            className="flex h-[24px] min-w-[84px] items-center justify-center rounded-full bg-[#12274b] px-3.5 text-[12px] font-medium leading-none tracking-[0.01em] text-[#eef4fc] tabular-nums whitespace-nowrap"
+            className="flex h-[25px] min-w-[92px] items-center justify-center rounded-[9px] bg-[#5c5c5c] px-4 text-[13px] font-semibold leading-none tracking-[0.01em] text-white tabular-nums whitespace-nowrap"
           >
             {formattedBalance} ج.م
           </span>
 
           <span
-            className="relative flex h-[24px] w-[32px] shrink-0 items-center justify-center overflow-hidden rounded-[10px] bg-[#070ac0]"
+            className="flex h-[25px] w-[38px] shrink-0 items-center justify-center rounded-[9px] bg-[#39e981]"
             aria-hidden="true"
           >
-            <img
-              src="/assets/aistudio/photo_2026-11-24_23-32-34_f4b9464c.jpg"
-              alt=""
-              draggable={false}
-              className="h-full w-full scale-[1.22] object-cover select-none"
-            />
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="#000000"
+              strokeWidth="2.1"
+              strokeLinecap="round"
+            >
+              <line x1="8" y1="2.5" x2="8" y2="13.5" />
+              <line x1="2.5" y1="8" x2="13.5" y2="8" />
+            </svg>
           </span>
         </button>
 
@@ -77,7 +83,7 @@ export function Header({
           type="button"
           aria-label="المكافآت والإشعارات"
           onClick={onOpenNotifications}
-          className="relative flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center rounded-full text-[#b9c9de] transition-colors hover:bg-white/10 active:opacity-60"
+          className="relative flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center rounded-full text-[#6f7b8e] transition-colors hover:bg-black/5 active:opacity-60"
         >
           <svg
             width="28"
@@ -88,16 +94,16 @@ export function Header({
           >
             <path
               d="M17 2.8l1.9 1.7 2.5-.8 1.2 2.3 2.6.2.3 2.6 2.4 1.1-.6 2.5 1.8 1.9-1.4 2.2 1 2.4-2.1 1.5.1 2.6-2.5.7-.7 2.5-2.6-.2-1.6 2-2.3-1-2.2 1.3-1.8-1.9-2.5.4-1-2.4-2.5-.4-.1-2.6-2.2-1.3.8-2.5-1.5-2 1.7-2-.7-2.5 2.3-1.2.2-2.6 2.6-.3 1.1-2.4 2.5.6L17 2.8z"
-              stroke="#b9c9de"
-              strokeWidth="1.4"
+              stroke="#6f7b8e"
+              strokeWidth="1.45"
               strokeLinejoin="round"
-              fill="#0f2447"
+              fill="#ffffff"
             />
             <text
               x="17"
               y="18.8"
               textAnchor="middle"
-              fill="#dce6f2"
+              fill="#6f7b8e"
               fontSize="5.2"
               fontWeight="800"
               fontFamily="Roboto, Arial, sans-serif"
@@ -109,13 +115,13 @@ export function Header({
               cx="25.6"
               cy="25.6"
               r="4.7"
-              fill="#b9c9de"
-              stroke="#0f2447"
+              fill="#6f7b8e"
+              stroke="#ffffff"
               strokeWidth="1.3"
             />
             <path
               d="M25.6 23.4v4.4M23.4 25.6h4.4"
-              stroke="#0f2447"
+              stroke="#ffffff"
               strokeWidth="1.6"
               strokeLinecap="round"
             />
